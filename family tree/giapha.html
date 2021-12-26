@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Tree</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+
+    input[type="button"]{
+        display: inline-block;
+        margin-left: 3px;
+    }
+    
+    .kq{
+        position: absolute;
+        left: 475px;
+        width: 900px;
+        height: 500px;
+        border: 1px solid black;
+        margin-top: 25px;
+        text-align: left;
+        font-size: 25px;
+    }
+</style>
+<body>
+    <h1>Đồ án môn cấu trúc dữ liệu và thuật toán</h1>
+    <h2>Chương trình bài toán cây gia phả</h2>
+    <h3>Tìm người có trong dòng họ hay không?</h3>
+    <input id="input" type="text" id="ten" placeholder="Nhập họ tên">
+    <input type="button" value="tìm kiếm" onclick="giapha()">
+    <input type="button" onclick="end()" value="Thoát" name="thoat">
+    <div>
+        <h4 id="kq"></h4>
+    </div>
+</body>
+<script>
+   
+function giapha() {
+    debugger;
+    const giapha = [
+                        {
+                            Tên: "Nguyễn Văn A", Tuổi: "45", Hệ: "1", Vai: "cha", Giới:"nam"},
+                        {
+                            Tên: "Trần Ngọc B", Tuổi: "32", Hệ: "1", Vai:"mẹ", Giới: "nữ"},
+                        {
+                            Tên: "Nguyễn Trần D", Tuổi: "31", Hệ: "2", Vai: "con", Giới: "nam"},
+                        {
+                            Tên: "Võ Thị K", Tuổi: "28", Hệ: "2", Vai: "con dâu", Giới: "nữ"},
+                        {
+                            Tên: "Nguyễn Tuấn V", Tuổi: "10", Hệ: "3", Vai: "cháu", Giới: "nam"},
+                        {
+                            Tên: "Nguyễn Châu C", Tuổi: "8", Hệ: "3", Vai: "cháu", Giới: "nam"},
+                        {
+                            Tên: "Nguyễn Luân L", Tuổi: "3", Hệ: "3", Vai: "cháu",  Giới: "nam"}
+                        ];
+
+    const input = document.getElementById("input").value;
+    const result = giapha.filter(element => {
+        return element.Tên == input && element.Tên.startsWith("Nguyễn") && element.Giới == "nam"
+    });
+
+    // console.table(result);
+    document.getElementById("kq").innerHTML = JSON.stringify(result);
+};
+
+function end() {
+    location.replace("./menu.html");
+}
+
+
+</script>
+</html>

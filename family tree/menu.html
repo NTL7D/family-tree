@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Tree</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+
+    input[type="button"]{
+        display: inline-block;
+        margin: 5px;
+    }
+</style>
+<body>
+    <h1>Đồ án môn cấu trúc dữ liệu và thuật toán</h1>
+    <h2>Chương trình bài toán cây gia phả</h2>
+    <div class="button">
+        <input type="button" onclick="findFam()" value="Tìm người cùng trong gia phả" name="timgiapha">
+        <input type="button" onclick="findGener()" value="Tìm người cùng thế hệ" name="timthehe">
+        <input type="button" onclick="findChild()" value="Tìm con cháu của một người" name="timconchau">
+        <input type="button" onclick="end()" value="Thoát" name="thoat">
+    </div>
+</body>
+<script>
+        function findFam() {
+            location.replace("./giapha.html");
+        }
+        function findGener() {
+            location.replace("./thehe.html");
+        }
+        function findChild() {
+            location.replace("./conchau.html");
+        }
+        function end() {
+            location.replace("./index.html");
+        }
+</script>
+</html>

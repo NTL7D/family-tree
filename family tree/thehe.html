@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family tree</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+
+    input[type="button"]{
+        display: inline-block;
+        margin: 3px;
+    }
+
+</style>
+    <body>
+        <h1>Đồ án môn cấu trúc dữ liệu và thuật toán</h1>
+        <h2>Chương trình bài toán cây gia phả</h2>
+        <h3>Tìm người có cùng thế hệ hay không?</h3>
+        <input id="input" type="number" id="so" placeholder="nhập thế hệ">
+        <input type="button" value="tìm kiếm" onclick="giapha()">
+        <input type="button" onclick="end()" value="Thoát" name="thoat">
+        <div>
+            <h4 id="kq"></h4>
+        </div>
+    </body>
+    <script>
+       
+    function giapha() {
+        var giapha = [
+                            {
+                                Tên: "Nguyễn Văn A", Tuổi: "45", Hệ: "1", Vai: "cha", Giới:"nam"},
+                            {
+                                Tên: "Trần Ngọc B", Tuổi: "32", Hệ: "1", Vai:"mẹ", Giới: "nữ"},
+                            {
+                                Tên: "Nguyễn Trần D", Tuổi: "31", Hệ: "2", Vai: "con", Giới: "nam"},
+                            {
+                                Tên: "Võ Thị K", Tuổi: "28", Hệ: "2", Vai: "con dâu", Giới: "nữ"},
+                            {
+                                Tên: "Nguyễn Tuấn V", Tuổi: "10", Hệ: "3", Vai: "cháu", Giới: "nam"},
+                            {
+                                Tên: "Nguyễn Châu C", Tuổi: "8", Hệ: "3", Vai: "cháu", Giới: "nam"},
+                            {
+                                Tên: "Nguyễn Luân L", Tuổi: "3", Hệ: "3", Vai: "cháu",  Giới: "nam"}
+                            ];
+    
+        var input = document.getElementById("input").value;
+        var result = giapha.filter(thehe => thehe.Hệ == input);
+    
+        document.getElementById("kq").innerHTML = JSON.stringify(result);
+    };
+    
+    function end() {
+        location.replace("menu.html");
+    }
+    
+    
+    </script>
+</html>
